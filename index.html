@@ -7,6 +7,8 @@
 <meta name="description" content="Află în 30 de secunde cât te costă mașina pe an: RCA după tarifele ASF, impozit 2026, rovinietă, ITP și CASCO. Fără înmatriculare, CNP sau e-mail.">
 <link rel="canonical" href="https://roboasig.online/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#1d3fd1">
 <link rel="stylesheet" href="style.css">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3913582839475889" crossorigin="anonymous"></script>
 <meta property="og:title" content="Cât te costă mașina pe an? Calculator fără date personale">
@@ -25,23 +27,26 @@
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="logo" href="/">Robo<b>Asig</b></a>
+  <a class="logo" href="/"><img src="img/logo.svg" alt="" width="30" height="30">Robo<b>Asig</b></a>
   <nav class="main" aria-label="Meniu principal">
-    <a href="/">Calculator</a>
-    <a href="cat-costa-rca-2026.html">RCA 2026</a>
-    <a href="impozit-auto-2026.html">Impozit</a>
-    <a href="rovinieta-2026.html">Rovinietă</a>
-    <a href="ghiduri.html">Toate ghidurile</a>
+    <a href="/" aria-current="page">Cost total</a>
+    <a href="calculator-rca.html">RCA</a>
+    <a href="calculator-impozit-auto.html">Impozit</a>
+    <a href="calculator-rovinieta.html">Rovinietă</a>
+    <a href="ghiduri.html">Ghiduri</a>
   </nav>
 </div></header>
 
-<main class="wrap">
-  <div class="hero">
-    <h1>Cât te costă mașina pe an?</h1>
-    <p>RCA, impozit, rovinietă, ITP și CASCO într-un singur calcul. Fără număr de înmatriculare, fără CNP, fără e-mail: răspunzi la câteva întrebări și vezi o estimare pe loc.</p>
-    <div class="pills"><span class="pill">Calculator, nu broker</span><span class="pill">Fără date personale</span><span class="pill">Tarife ASF mai 2026</span><span class="pill">Impozit 2026 pe normă Euro</span><span class="pill">Rovinietă de la 1 oct. 2026</span></div>
+<section class="hero"><div class="wrap">
+  <div>
+    <h1>Cât te costă <span>mașina pe an?</span></h1>
+    <p class="sub">RCA, impozit, rovinietă, ITP și CASCO într-un singur calcul. Fără număr de înmatriculare, fără CNP, fără e-mail.</p>
+    <ul class="trust"><li>Fără date personale</li><li>Tarife ASF mai 2026</li><li>Impozit 2026 pe normă Euro</li><li>Rovinietă de la 1 oct. 2026</li></ul>
   </div>
+  <div class="art"><img src="img/hero.svg" alt="Ilustrație: mașină, scut de asigurare și costul anual estimat" width="460" height="340" fetchpriority="high"></div>
+</div></section>
 
+<main class="wrap">
   <div class="grid">
     <form class="card" id="f" onsubmit="return false">
       <h2>Mașina și șoferul</h2>
@@ -128,7 +133,7 @@
       </div>
     </form>
 
-    <div class="card result" aria-live="polite">
+    <div class="card result" id="rezultat" aria-live="polite">
       <h2>Estimarea ta</h2>
       <div class="big" id="oTotal">—</div>
       <div class="sub" id="oInterval"></div>
@@ -143,14 +148,23 @@
   <div class="adwrap"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3913582839475889" data-ad-slot="6605017234" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
 
   <section class="block">
+    <h2>Calculează doar ce te interesează</h2>
+    <div class="calc3">
+      <a href="calculator-rca.html"><img src="img/rca.svg" alt="" width="44" height="44"><b>Calculator RCA</b><span>Tariful ASF pe vârstă, zonă, putere și bonus-malus.</span></a>
+      <a href="calculator-impozit-auto.html"><img src="img/impozit.svg" alt="" width="44" height="44"><b>Calculator impozit auto</b><span>Pe cilindree, normă Euro și majorarea primăriei.</span></a>
+      <a href="calculator-rovinieta.html"><img src="img/rovinieta.svg" alt="" width="44" height="44"><b>Calculator rovinietă</b><span>Prețul pe 12 luni după norma de poluare.</span></a>
+    </div>
+  </section>
+
+  <section class="block">
     <h2>Scenarii pe care le întreabă toată lumea</h2>
     <div class="cards3">
-      <a href="rca-sub-30-de-ani.html"><div class="card"><h3>Am sub 30 de ani. Cât mai plătesc?</h3><p>Diferența dintre 30 și 31 de ani, pe fiecare putere de motor, în București și în restul țării.</p></div></a>
-      <a href="masina-pe-pfa-sau-persoana-fizica.html"><div class="card"><h3>Pun mașina pe PFA sau pe firmă?</h3><p>Ce se schimbă la RCA, ce cheltuieli se pot deduce și capcana contractului de comodat.</p></div></a>
-      <a href="cat-costa-rca-2026.html"><div class="card"><h3>Cât costă RCA în 2026?</h3><p>Tabelul complet ASF pe vârstă, putere și zonă, pentru persoane fizice și firme.</p></div></a>
-      <a href="impozit-auto-2026.html"><div class="card"><h3>Impozit auto 2026</h3><p>Tabelul pe cilindree și normă Euro, cu exemple pentru mașini populare.</p></div></a>
-      <a href="rovinieta-2026.html"><div class="card"><h3>Rovinieta 2026</h3><p>Prețurile noi de la 1 octombrie, pe normă de poluare.</p></div></a>
-      <a href="bonus-malus-rca.html"><div class="card"><h3>Bonus-malus RCA</h3><p>Cum îți scade sau îți crește prețul clasa B/M.</p></div></a>
+      <a href="rca-sub-30-de-ani.html"><div class="card"><img src="img/sub30.svg" alt="" width="48" height="48"><div><h3>Am sub 30 de ani. Cât mai plătesc?</h3><p>Diferența dintre 30 și 31 de ani, pe fiecare putere de motor, în București și în restul țării.</p></div></div></a>
+      <a href="masina-pe-pfa-sau-persoana-fizica.html"><div class="card"><img src="img/pfa.svg" alt="" width="48" height="48"><div><h3>Pun mașina pe PFA sau pe firmă?</h3><p>Ce se schimbă la RCA, ce cheltuieli se pot deduce și capcana contractului de comodat.</p></div></div></a>
+      <a href="cat-costa-rca-2026.html"><div class="card"><img src="img/rca.svg" alt="" width="48" height="48"><div><h3>Cât costă RCA în 2026?</h3><p>Tabelul complet ASF pe vârstă, putere și zonă, pentru persoane fizice și firme.</p></div></div></a>
+      <a href="impozit-auto-2026.html"><div class="card"><img src="img/impozit.svg" alt="" width="48" height="48"><div><h3>Impozit auto 2026</h3><p>Tabelul pe cilindree și normă Euro, cu exemple pentru mașini populare.</p></div></div></a>
+      <a href="rovinieta-2026.html"><div class="card"><img src="img/rovinieta.svg" alt="" width="48" height="48"><div><h3>Rovinieta 2026</h3><p>Prețurile noi de la 1 octombrie, pe normă de poluare.</p></div></div></a>
+      <a href="bonus-malus-rca.html"><div class="card"><img src="img/bonus.svg" alt="" width="48" height="48"><div><h3>Bonus-malus RCA</h3><p>Cum îți scade sau îți crește prețul clasa B/M.</p></div></div></a>
     </div>
   </section>
 
@@ -164,10 +178,13 @@
   </section>
 </main>
 
+<div class="mbar" id="mbar" aria-hidden="true"><div><small>Estimarea ta</small><b id="mTot">—</b></div><a href="#rezultat">Vezi detalii</a></div>
 <footer><div class="wrap">
   <div class="fgrid">
+    <div class="fbrand"><a class="logo" href="/"><img src="img/logo.svg" alt="" width="30" height="30">Robo<b>Asig</b></a><p>Calculatorul care îți arată cât te costă mașina pe an, fără date personale.</p></div>
+    <div><b>Calculatoare</b><a href="/">Cost anual mașină</a><a href="calculator-rca.html">Calculator RCA</a><a href="calculator-impozit-auto.html">Calculator impozit auto</a><a href="calculator-rovinieta.html">Calculator rovinietă</a></div>
     <div><b>Ghiduri</b><a href="cat-costa-rca-2026.html">Cât costă RCA în 2026</a><a href="rca-sub-30-de-ani.html">RCA sub 30 de ani</a><a href="bonus-malus-rca.html">Bonus-malus RCA</a><a href="impozit-auto-2026.html">Impozit auto 2026</a><a href="rovinieta-2026.html">Rovinieta 2026</a><a href="masina-pe-pfa-sau-persoana-fizica.html">Mașina pe PFA sau pe firmă</a></div>
-    <div><b>RoboAsig</b><a href="/">Calculator cost anual</a><a href="despre.html">Despre noi</a><a href="metodologie.html">Metodologie și surse</a><a href="contact.html">Contact</a><a href="politica-confidentialitate.html">Confidențialitate</a></div>
+    <div><b>RoboAsig</b><a href="despre.html">Despre noi</a><a href="metodologie.html">Metodologie și surse</a><a href="contact.html">Contact</a><a href="politica-confidentialitate.html">Confidențialitate</a></div>
   </div>
   <p>RoboAsig oferă estimări informative. Nu suntem asigurător sau broker de asigurări și nu intermediem polițe. Unele linkuri pot fi de afiliere: dacă încheii o poliță prin ele, putem primi un comision, fără cost suplimentar pentru tine.</p>
   <p>© 2026 RoboAsig · Date actualizate: <span id="upd">19 noiembrie 2026</span></p>
@@ -204,6 +221,7 @@
     $("wValoare").hidden = !o.cuCasco;
     const t = Calc.total(o);
     $("oTotal").textContent = "≈ " + fmt(t.central) + " / an";
+    $("mTot").textContent = "≈ " + fmt(t.central) + " / an";
     $("oInterval").textContent = "Interval realist: " + rng(t.min, t.max) + " · ≈ " + fmt(Math.round(t.central/12)) + " pe lună";
     let rows = '<div class="row"><span>RCA <small>Referință ASF ' + t.rca.ref.toLocaleString("ro-RO") + ' lei (' + t.rca.banda + ')' + (o.bm !== "B0" ? ', ajustat pentru ' + o.bm : '') + '</small></span><span>' + rng(t.rca.min, t.rca.max) + '</span></div>';
     rows += '<div class="row"><span>Impozit auto <small>' + (o.euro === "electric" ? "Electric: sumă fixă" : "Cod fiscal art. 470" + (o.majorare === null ? ", fără/cu majorare locală" : "")) + '</small></span><span>' + rng(t.impozit.min, t.impozit.max) + '</span></div>';
@@ -230,6 +248,13 @@
   document.getElementById("f").addEventListener("input", ruleaza);
   document.getElementById("f").addEventListener("change", ruleaza);
   ruleaza();
+  if ("IntersectionObserver" in window) {
+    const mb = $("mbar"), form = $("f"), res = $("rezultat");
+    let fv = false, rv = false;
+    const upd = () => mb.classList.toggle("show", fv && !rv);
+    new IntersectionObserver(e => { e.forEach(x => { if (x.target === form) fv = x.isIntersecting; else rv = x.isIntersecting; }); upd(); }, {threshold: 0}).observe(form);
+    new IntersectionObserver(e => { rv = e[0].isIntersecting; upd(); }, {threshold: .15}).observe(res);
+  }
 })();
 </script>
 </body>
