@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cât costă mașina pe an? Calculator RCA, impozit, rovinietă, CASCO | RoboAsig</title>
+<meta name="description" content="Estimează în 30 de secunde cât te costă mașina pe an: RCA după tarifele de referință ASF, impozit auto 2026, rovinietă, ITP și CASCO. Fără număr de înmatriculare, fără CNP, fără date personale.">
+<link rel="canonical" href="https://roboasig.online/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<meta property="og:title" content="Cât te costă mașina pe an? Calculator fără date personale">
+<meta property="og:description" content="RCA, impozit, rovinietă, ITP și CASCO într-un singur calcul. Vezi și ce se schimbă dacă ai sub 30 de ani sau pui mașina pe firmă.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://roboasig.online/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Calculator cost anual mașină","url":"https://roboasig.online/","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"ro","offers":{"@type":"Offer","price":"0","priceCurrency":"RON"}}
+</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="/">Robo<b>Asig</b></a>
+  <nav class="main">
+    <a href="rca-sub-30-de-ani.html">RCA sub 30 de ani</a>
+    <a href="masina-pe-pfa-sau-persoana-fizica.html">Mașina pe PFA?</a>
+    <a href="metodologie.html">Cum calculăm</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <h1>Cât te costă mașina pe an?</h1>
+    <p>RCA, impozit, rovinietă, ITP și CASCO într-un singur calcul. Fără număr de înmatriculare, fără CNP, fără e-mail: răspunzi la câteva întrebări și vezi o estimare pe loc.</p>
+    <div class="pills"><span class="pill">Calculator, nu broker</span><span class="pill">Tarife ASF mai 2026</span><span class="pill">Impozit 2026 pe normă Euro</span><span class="pill">Rovinietă de la 1 oct. 2026</span></div>
+  </div>
+
+  <div class="grid">
+    <form class="card" id="f" onsubmit="return false">
+      <h2>Mașina și șoferul</h2>
+      <div class="form">
+        <div class="full">
+          <label>Pe cine e mașina?</label>
+          <div class="seg">
+            <input type="radio" name="proprietar" id="p1" value="pf" checked><label for="p1">Persoană fizică</label>
+            <input type="radio" name="proprietar" id="p2" value="pj"><label for="p2">Firmă (SRL)</label>
+          </div>
+        </div>
+        <div id="wVarsta">
+          <label for="varsta">Vârsta proprietarului</label>
+          <select id="varsta">
+            <option value="le30">Până în 30 de ani</option>
+            <option value="a31" selected>31–40 de ani</option>
+            <option value="a41">41–50 de ani</option>
+            <option value="a51">51–60 de ani</option>
+            <option value="a61">Peste 60 de ani</option>
+          </select>
+        </div>
+        <div>
+          <label for="zona">Unde e înmatriculată?</label>
+          <select id="zona">
+            <option value="rest" selected>Restul țării</option>
+            <option value="bif">București sau Ilfov</option>
+          </select>
+        </div>
+        <div>
+          <label for="putere">Putere motor <span class="hint">(talon, P.2)</span></label>
+          <input type="number" id="putere" value="90" min="1" max="1500" inputmode="numeric">
+        </div>
+        <div>
+          <label for="unit">Unitate</label>
+          <div class="seg">
+            <input type="radio" name="unit" id="u1" value="cp" checked><label for="u1">CP</label>
+            <input type="radio" name="unit" id="u2" value="kw"><label for="u2">kW</label>
+          </div>
+        </div>
+        <div>
+          <label for="cmc">Capacitate cilindrică <span class="hint">(cmc)</span></label>
+          <input type="number" id="cmc" value="1461" min="0" max="9000" inputmode="numeric">
+        </div>
+        <div>
+          <label for="euro">Normă de poluare <span class="hint">(talon, V.9)</span></label>
+          <select id="euro">
+            <option value="e6" selected>Euro 6</option>
+            <option value="e5">Euro 5</option>
+            <option value="e4">Euro 4</option>
+            <option value="e3">Euro 3 sau mai veche</option>
+            <option value="hibrid">Hibrid (peste 50 g CO₂/km)</option>
+            <option value="electric">Electric</option>
+          </select>
+        </div>
+        <div>
+          <label for="vechime">Vechimea mașinii <span class="hint">(ani)</span></label>
+          <input type="number" id="vechime" value="6" min="0" max="60" inputmode="numeric">
+        </div>
+        <div>
+          <label for="bm">Clasa bonus-malus <span class="hint">(dacă nu știi, B0)</span></label>
+          <select id="bm">
+            <option>B8</option><option>B7</option><option>B6</option><option>B5</option><option>B4</option><option>B3</option><option>B2</option><option>B1</option>
+            <option selected>B0</option>
+            <option>M1</option><option>M2</option><option>M3</option><option>M4</option><option>M5</option><option>M6</option><option>M7</option><option>M8</option>
+          </select>
+        </div>
+        <div class="full">
+          <label for="maj">Majorarea impozitului decisă de primăria ta</label>
+          <select id="maj">
+            <option value="" selected>Nu știu (arată interval 0–50%)</option>
+            <option value="0">Fără majorare</option>
+            <option value="25">+25%</option>
+            <option value="50">+50%</option>
+            <option value="100">+100%</option>
+          </select>
+        </div>
+        <div class="full">
+          <label class="check"><input type="checkbox" id="cuCasco"> Vreau să includ și CASCO</label>
+        </div>
+        <div class="full" id="wValoare" hidden>
+          <label for="valoare">Valoarea actuală a mașinii <span class="hint">(lei; 1 € ≈ 5 lei)</span></label>
+          <input type="number" id="valoare" value="60000" min="0" step="1000" inputmode="numeric">
+        </div>
+      </div>
+    </form>
+
+    <div class="card result" aria-live="polite">
+      <h2>Estimarea ta</h2>
+      <div class="big" id="oTotal">—</div>
+      <div class="sub" id="oInterval"></div>
+      <div class="rows" id="oRows"></div>
+      <div class="scen"><h3>Ce s-ar schimba dacă…</h3><ul id="oScen"></ul></div>
+      <a class="cta off" id="cta" href="#" rel="sponsored nofollow">Vezi oferte RCA reale de la un broker autorizat (în curând)</a>
+      <p class="disc">Estimare orientativă, nu ofertă de asigurare. RCA se bazează pe tarifele de referință ASF (reper statistic, nu preț de piață); prețul real depinde de asigurător și de istoricul tău. <a href="metodologie.html">Cum calculăm</a>.</p>
+    </div>
+  </div>
+
+  <section class="block">
+    <h2>Scenarii pe care le întreabă toată lumea</h2>
+    <div class="cards3">
+      <a href="rca-sub-30-de-ani.html"><div class="card"><h3>Am sub 30 de ani. Cât mai plătesc?</h3><p>Diferența dintre 30 și 31 de ani, pe fiecare putere de motor, în București și în restul țării.</p></div></a>
+      <a href="masina-pe-pfa-sau-persoana-fizica.html"><div class="card"><h3>Pun mașina pe PFA sau pe firmă?</h3><p>Ce se schimbă la RCA, ce cheltuieli se pot deduce și capcana contractului de comodat.</p></div></a>
+      <a href="metodologie.html"><div class="card"><h3>De unde vin cifrele?</h3><p>Tarifele ASF, Codul fiscal art. 470, Ordinul MTI 888/2026: formulele și limitele calculului.</p></div></a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Întrebări frecvente</h2>
+    <details><summary>De ce nu cereți numărul de înmatriculare sau CNP-ul?</summary><p>Pentru că nu vindem polițe și nu avem nevoie de ele. Calculul rulează în browserul tău și nu trimitem nicăieri ce completezi. Pentru o ofertă fermă, brokerul sau asigurătorul îți va cere datele complete.</p></details>
+    <details><summary>Prețul RCA afișat e cel pe care îl voi plăti?</summary><p>Nu neapărat. Tariful de referință ASF este un reper statistic calculat din daunele din piață. Asigurătorii pot vinde sub sau peste el. De aceea arătăm și un interval.</p></details>
+    <details><summary>Unde găsesc puterea, capacitatea cilindrică și norma Euro?</summary><p>În certificatul de înmatriculare (talon): puterea la P.2 (în kW), capacitatea cilindrică la P.1, iar norma de poluare la V.9.</p></details>
+    <details><summary>Ce înseamnă clasa bonus-malus?</summary><p>Este istoricul tău de daune. B0 este clasa de start; fiecare an fără daune te urcă spre B8 (reducere de până la aproximativ 50%), iar daunele te coboară spre M8 (până la +80%). Clasa o poți afla gratuit pe site-ul ASF.</p></details>
+    <details><summary>Ce fac dacă primesc oferte RCA foarte scumpe?</summary><p>Dacă primești cel puțin 3 oferte cu peste 36% mai mari decât tariful de referință ASF, ești considerat „asigurat cu risc ridicat” și te poți adresa Biroului Asigurătorilor de Autovehicule din România (BAAR).</p></details>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <a href="metodologie.html">Metodologie și surse</a><a href="politica-confidentialitate.html">Confidențialitate</a>
+  <p>roboasig.online oferă estimări informative. Nu suntem asigurător sau broker de asigurări și nu intermediem polițe. Unele linkuri pot fi de afiliere: dacă încheii o poliță prin ele, putem primi un comision, fără cost suplimentar pentru tine.</p>
+  <p>Date actualizate: <span id="upd"></span>.</p>
+</div></footer>
+
+<script src="data.js"></script>
+<script src="calc.js"></script>
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const fmt = n => n.toLocaleString("ro-RO") + " lei";
+  const rng = (a,b) => a===b ? fmt(a) : a.toLocaleString("ro-RO") + "–" + fmt(b);
+  $("upd").textContent = DATA.actualizat;
+
+  function citeste(){
+    const pr = document.querySelector('input[name=proprietar]:checked').value;
+    const unit = document.querySelector('input[name=unit]:checked').value;
+    const p = +$("putere").value || 0;
+    const maj = $("maj").value;
+    return {
+      proprietar: pr, varsta: $("varsta").value, zona: $("zona").value,
+      kw: unit === "cp" ? Math.round(p * 0.7355) : p,
+      cmc: +$("cmc").value || 0, euro: $("euro").value, vechime: +$("vechime").value || 0,
+      bm: $("bm").value, majorare: maj === "" ? null : +maj,
+      cuCasco: $("cuCasco").checked, valoare: +$("valoare").value || 0
+    };
+  }
+
+  function dif(a, b){ const d = a - b; return d === 0 ? "aceeași sumă" : (d > 0 ? '<span class="up">+' + fmt(d) + '</span>' : '<span class="down">−' + fmt(-d) + '</span>'); }
+
+  function ruleaza(){
+    const o = citeste();
+    $("wVarsta").hidden = o.proprietar === "pj";
+    $("wValoare").hidden = !o.cuCasco;
+    const t = Calc.total(o);
+    $("oTotal").textContent = "≈ " + fmt(t.central) + " / an";
+    $("oInterval").textContent = "Interval realist: " + rng(t.min, t.max) + " · ≈ " + fmt(Math.round(t.central/12)) + " pe lună";
+    let rows = '<div class="row"><span>RCA <small>Referință ASF ' + t.rca.ref.toLocaleString("ro-RO") + ' lei (' + t.rca.banda + ')' + (o.bm !== "B0" ? ', ajustat pentru ' + o.bm : '') + '</small></span><span>' + rng(t.rca.min, t.rca.max) + '</span></div>';
+    rows += '<div class="row"><span>Impozit auto <small>' + (o.euro === "electric" ? "Electric: sumă fixă" : "Cod fiscal art. 470" + (o.majorare === null ? ", fără/cu majorare locală" : "")) + '</small></span><span>' + rng(t.impozit.min, t.impozit.max) + '</span></div>';
+    rows += '<div class="row"><span>Rovinietă 12 luni <small>Tarif de la 1 oct. 2026</small></span><span>' + fmt(t.rovinieta) + '</span></div>';
+    rows += '<div class="row"><span>ITP (pe an) <small>' + t.itp.nota + '</small></span><span>' + rng(t.itp.min, t.itp.max) + '</span></div>';
+    if (o.cuCasco) rows += '<div class="row"><span>CASCO <small>2,5–6% din valoarea mașinii (orientativ)</small></span><span>' + rng(t.casco.min, t.casco.max) + '</span></div>';
+    $("oRows").innerHTML = rows;
+
+    const s = [];
+    const baza = t.rca.ajustat;
+    if (o.proprietar === "pf") {
+      if (o.varsta === "le30") s.push("Ai avea peste 30 de ani: RCA " + dif(Calc.rca({...o, varsta:"a31"}).ajustat, baza));
+      else s.push("Ai avea sub 30 de ani: RCA " + dif(Calc.rca({...o, varsta:"le30"}).ajustat, baza));
+      s.push("Mașina ar fi pe o firmă (SRL): RCA " + dif(Calc.rca({...o, proprietar:"pj"}).ajustat, baza));
+    } else {
+      s.push("Mașina ar fi pe persoană fizică (31–40 ani): RCA " + dif(Calc.rca({...o, proprietar:"pf", varsta:"a31"}).ajustat, baza));
+    }
+    s.push(o.zona === "bif" ? "Ai înmatricula în afara Bucureștiului/Ilfov: RCA " + dif(Calc.rca({...o, zona:"rest"}).ajustat, baza)
+                            : "Ai înmatricula în București/Ilfov: RCA " + dif(Calc.rca({...o, zona:"bif"}).ajustat, baza));
+    if (o.bm === "B0") s.push("După 3 ani fără daune (aprox. B3): RCA " + dif(Calc.rca({...o, bm:"B3"}).ajustat, baza));
+    $("oScen").innerHTML = s.map(x => "<li>" + x + "</li>").join("");
+  }
+
+  document.getElementById("f").addEventListener("input", ruleaza);
+  document.getElementById("f").addEventListener("change", ruleaza);
+  ruleaza();
+})();
+</script>
+</body>
+</html>
