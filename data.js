@@ -1,7 +1,7 @@
-/* roboasig.online — date de calcul. Actualizat: 19 noiembrie 2026.
+/* roboasig.online — date de calcul. Actualizat: 21 noiembrie 2026.
    Toate valorile sunt orientative. Surse în metodologie.html. */
 const DATA = {
-  actualizat: "19 noiembrie 2026",
+  actualizat: "21 noiembrie 2026",
 
   // RCA: tarife de referință ASF, mai 2026, autoturisme (lei/an). NU sunt prețuri de piață.
   rca: {
@@ -52,6 +52,55 @@ const DATA = {
   itp: { min: 150, max: 250 },
 
   // CASCO: nu există tarife publice; procent orientativ din valoarea mașinii.
-  casco: { min: 0.025, max: 0.06 }
+  casco: { min: 0.025, max: 0.06 },
+
+  // Județe: zona RCA (ASF are doar 2 zone) + majorarea impozitului auto 2026 în reședința de județ.
+  // m: procent fix | {n:{e3,e4,e5,e6,hibrid}} pe normă | {b:[≤1600,1601-2000,2001-2600,2601-3000,>3000]} pe capacitate.
+  // [min,max] = interval cunoscut; null într-o bandă sau m:null = nu am putut verifica (afișăm interval 0–50%).
+  // Surse: HCL-urile 2026 ale fiecărui municipiu (inclusiv modificările după OUG 9/2026). Verificat 21.11.2026.
+  judete: [
+    ["AB","Alba","Alba Iulia",0,"HCL 403/2025"],
+    ["AR","Arad","Arad",{b:[0,42.3,29.2,null,null]},"HCL 822/2025 (tabel propriu)"],
+    ["AG","Argeș","Pitești",0,"HCL 180/2025 mod. HCL 625/2025"],
+    ["BC","Bacău","Bacău",50,"HCL 553/2025"],
+    ["BH","Bihor","Oradea",{b:[0,20,20,20,20]},"HCL 854/2025"],
+    ["BN","Bistrița-Năsăud","Bistrița",0,"HCL 302/2025"],
+    ["BT","Botoșani","Botoșani",{b:[0,28,58,63,71]},"HCL 602/2025"],
+    ["BR","Brăila","Brăila",0,"HCL 716/2025"],
+    ["BV","Brașov","Brașov",{n:{e3:100,e4:75,e5:50,e6:35,hibrid:5}},"HCL 1142/2025 rep. HCL 120/2026"],
+    ["B","București","București",0,"HCGMB 514/2025"],
+    ["BZ","Buzău","Buzău",5,"HCL 244/2025 mod. HCL 34/2026"],
+    ["CL","Călărași","Călărași",0,"HCL 241/2025"],
+    ["CS","Caraș-Severin","Reșița",null,""],
+    ["CJ","Cluj","Cluj-Napoca",0,"HCL 760/2025"],
+    ["CT","Constanța","Constanța",10.4,"HCL 462/2025 (prima mașină; a doua +20%, de la a treia +50%)"],
+    ["CV","Covasna","Sfântu Gheorghe",0,"HCL 557/2025 mod. HCL 75/2026"],
+    ["DB","Dâmbovița","Târgoviște",0,"HCL 434/2025"],
+    ["DJ","Dolj","Craiova",13,"HCL 496/2025"],
+    ["GL","Galați","Galați",0,"HCL 416/2025 mod. HCL 670/2025"],
+    ["GR","Giurgiu","Giurgiu",{b:[0,10,10,10,10]},"HCL 84/2025 mod. HCL 30/2026"],
+    ["GJ","Gorj","Târgu Jiu",{b:[0,10,17,17,36]},"HCL 645/2025"],
+    ["HR","Harghita","Miercurea Ciuc",0,"HCL 354/2025 mod. HCL 46/2026"],
+    ["HD","Hunedoara","Deva",0,"HCL 549/2025"],
+    ["IL","Ialomița","Slobozia",0,"HCL 454/2025"],
+    ["IS","Iași","Iași",0,"HCL 507/2025"],
+    ["IF","Ilfov","Buftea",0,"HCL 185/2025"],
+    ["MM","Maramureș","Baia Mare",0,"HCL 576/2025"],
+    ["MH","Mehedinți","Drobeta-Turnu Severin",0,"HCL 304/2025 mod. HCL 30/2026"],
+    ["MS","Mureș","Târgu Mureș",0,"HCL 330/2025 mod. HCL 36/2026"],
+    ["NT","Neamț","Piatra Neamț",0,"HCL 551/2025"],
+    ["OT","Olt","Slatina",0,"HCL 559/2025 mod. HCL 63/2026"],
+    ["PH","Prahova","Ploiești",{b:[0,23.2,58.7,[58.7,71],71]},"HCL 744/2025"],
+    ["SJ","Sălaj","Zalău",{b:[0,20,20,20,20]},"HCL 415/2025"],
+    ["SM","Satu Mare","Satu Mare",0,"HCL 98/2025 mod. HCL 343/2025"],
+    ["SB","Sibiu","Sibiu",0,"HCL 125/2025 mod. HCL 462/2025"],
+    ["SV","Suceava","Suceava",0,"HCL 329/2025"],
+    ["TR","Teleorman","Alexandria",50,"HCL 403/2025"],
+    ["TM","Timiș","Timișoara",50,"HCL 719/2025"],
+    ["TL","Tulcea","Tulcea",0,"HCL 370/2025"],
+    ["VL","Vâlcea","Râmnicu Vâlcea",{b:[0,0,20,20,20]},"HCL 356/2025 mod. HCL 389/2025"],
+    ["VS","Vaslui","Vaslui",null,""],
+    ["VN","Vrancea","Focșani",{b:[0,0,15,null,null]},"HCL 474/2025 (tabel propriu)"]
+  ]
 };
 if (typeof module !== "undefined") module.exports = DATA;

@@ -9,7 +9,7 @@
 <link rel="canonical" href="https://roboasig.online/calculator-impozit-auto.html">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3913582839475889" crossorigin="anonymous"></script>
 <meta property="og:site_name" content="RoboAsig">
 <meta property="og:locale" content="ro_RO">
@@ -46,14 +46,15 @@
   <div class="form">
     <div><label for="cmc">Capacitate cilindrică <span class="hint">(cmc, talon P.1)</span></label><input type="number" id="cmc" value="1598" min="0" inputmode="numeric"></div>
     <div><label for="eu">Normă de poluare <span class="hint">(talon V.9)</span></label><select id="eu"><option value="e6">Euro 6</option><option value="e5" selected>Euro 5</option><option value="e4">Euro 4</option><option value="e3">Euro 3 sau mai veche</option><option value="hibrid">Hibrid (&gt;50 g CO₂/km)</option><option value="electric">Electric</option></select></div>
-    <div class="full"><label for="mj">Majorarea primăriei</label><select id="mj"><option value="0">Fără majorare</option><option value="25">+25%</option><option value="50">+50%</option><option value="100">+100%</option></select></div>
+    <div class="full"><label for="jd">Județul <span class="hint">(majorarea din reședința de județ)</span></label><select id="jd"><option value="">Nu știu / altă localitate</option><option value="AB">Alba · Alba Iulia</option><option value="AR">Arad</option><option value="AG">Argeș · Pitești</option><option value="BC">Bacău</option><option value="BH">Bihor · Oradea</option><option value="BN">Bistrița-Năsăud · Bistrița</option><option value="BT">Botoșani</option><option value="BR">Brăila</option><option value="BV">Brașov</option><option value="B">București</option><option value="BZ">Buzău</option><option value="CL">Călărași</option><option value="CS">Caraș-Severin · Reșița</option><option value="CJ">Cluj · Cluj-Napoca</option><option value="CT">Constanța</option><option value="CV">Covasna · Sfântu Gheorghe</option><option value="DB">Dâmbovița · Târgoviște</option><option value="DJ">Dolj · Craiova</option><option value="GL">Galați</option><option value="GR">Giurgiu</option><option value="GJ">Gorj · Târgu Jiu</option><option value="HR">Harghita · Miercurea Ciuc</option><option value="HD">Hunedoara · Deva</option><option value="IL">Ialomița · Slobozia</option><option value="IS">Iași</option><option value="IF">Ilfov · Buftea</option><option value="MM">Maramureș · Baia Mare</option><option value="MH">Mehedinți · Drobeta-Turnu Severin</option><option value="MS">Mureș · Târgu Mureș</option><option value="NT">Neamț · Piatra Neamț</option><option value="OT">Olt · Slatina</option><option value="PH">Prahova · Ploiești</option><option value="SJ">Sălaj · Zalău</option><option value="SM">Satu Mare</option><option value="SB">Sibiu</option><option value="SV">Suceava</option><option value="TR">Teleorman · Alexandria</option><option value="TM">Timiș · Timișoara</option><option value="TL">Tulcea</option><option value="VL">Vâlcea · Râmnicu Vâlcea</option><option value="VS">Vaslui</option><option value="VN">Vrancea · Focșani</option></select></div>
+    <div class="full" id="wmj"><label for="mj">Majorarea primăriei tale</label><select id="mj"><option value="0">Fără majorare</option><option value="10">+10%</option><option value="25">+25%</option><option value="50">+50%</option><option value="100">+100%</option></select></div>
   </div>
   <div class="out" aria-live="polite"><div class="small">Impozit auto pe 2026</div><div class="big" id="i1">—</div><div class="small" id="i2"></div></div>
 </div>
 <div class="adwrap"><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3913582839475889" data-ad-slot="9039608886"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
 <h2>Formula de calcul</h2>
 <div class="box"><b>Impozit = ⌈ cmc / 200 ⌉ × tariful din tabel</b>, apoi eventuala majorare locală.</div>
-<p>Tabelul complet al tarifelor pe capacitate și normă Euro, cu exemple pentru mașini populare, îl găsești în ghidul <a href="impozit-auto-2026.html">Impozit auto 2026</a>.</p>
+<p>Tabelul complet al tarifelor pe capacitate și normă Euro îl găsești în ghidul <a href="impozit-auto-2026.html">Impozit auto 2026</a>, iar majorările din fiecare reședință de județ în <a href="impozit-auto-pe-judete.html">impozitul auto pe județe</a>: <a href="impozit-auto-bucuresti.html">București</a>, <a href="impozit-auto-cluj-napoca.html">Cluj-Napoca</a>, <a href="impozit-auto-timisoara.html">Timișoara</a>, <a href="impozit-auto-iasi.html">Iași</a>, <a href="impozit-auto-constanta.html">Constanța</a>, <a href="impozit-auto-craiova.html">Craiova</a>, <a href="impozit-auto-brasov.html">Brașov</a>, <a href="impozit-auto-galati.html">Galați</a>, <a href="impozit-auto-ploiesti.html">Ploiești</a>, <a href="impozit-auto-oradea.html">Oradea</a>.</p>
 <h2>Unde găsești datele în talon</h2>
 <ul><li><b>Capacitatea cilindrică:</b> rubrica P.1.</li><li><b>Norma de poluare:</b> rubrica V.9.</li><li><b>Majorarea:</b> în hotărârea consiliului local privind taxele și impozitele locale.</li></ul>
 <h2>Întrebări frecvente</h2>
@@ -67,15 +68,20 @@
   <div class="fgrid">
     <div class="fbrand"><a class="logo" href="/"><img src="img/logo.svg" alt="" width="30" height="30"><span>Robo<b>Asig</b></span></a><p>Calculatorul care îți arată cât te costă mașina pe an, fără date personale.</p></div>
     <div><b>Calculatoare</b><a href="/">Cost anual mașină</a><a href="calculator-rca.html">Calculator RCA</a><a href="calculator-impozit-auto.html">Calculator impozit auto</a><a href="calculator-rovinieta.html">Calculator rovinietă</a></div>
-    <div><b>Ghiduri</b><a href="cat-costa-rca-2026.html">Cât costă RCA în 2026</a><a href="rca-sub-30-de-ani.html">RCA sub 30 de ani</a><a href="bonus-malus-rca.html">Bonus-malus RCA</a><a href="impozit-auto-2026.html">Impozit auto 2026</a><a href="rovinieta-2026.html">Rovinieta 2026</a><a href="masina-pe-pfa-sau-persoana-fizica.html">Mașina pe PFA sau pe firmă</a></div>
+    <div><b>Ghiduri</b><a href="cat-costa-rca-2026.html">Cât costă RCA în 2026</a><a href="rca-sub-30-de-ani.html">RCA sub 30 de ani</a><a href="bonus-malus-rca.html">Bonus-malus RCA</a><a href="impozit-auto-2026.html">Impozit auto 2026</a><a href="rovinieta-2026.html">Rovinieta 2026</a><a href="masina-pe-pfa-sau-persoana-fizica.html">Mașina pe PFA sau pe firmă</a><a href="impozit-auto-pe-judete.html">Impozit auto pe județe</a><a href="glosar-auto.html">Glosar auto</a></div>
     <div><b>RoboAsig</b><a href="despre.html">Despre noi</a><a href="metodologie.html">Metodologie și surse</a><a href="contact.html">Contact</a><a href="politica-confidentialitate.html">Confidențialitate</a></div>
   </div>
   <p>RoboAsig oferă estimări informative. Nu suntem asigurător sau broker de asigurări și nu intermediem polițe. Unele linkuri pot fi de afiliere: dacă încheii o poliță prin ele, putem primi un comision, fără cost suplimentar pentru tine.</p>
-  <p>© 2026 RoboAsig · Date actualizate: <span id="upd">19 noiembrie 2026</span></p>
+  <p>© 2026 RoboAsig · Date actualizate: <span id="upd">21 noiembrie 2026</span></p>
 </div></footer>
 <script src="data.js"></script><script src="calc.js"></script><script>(function(){const $=i=>document.getElementById(i),f=x=>x.toLocaleString("ro-RO")+" lei";
-function r(){const eu=$("eu").value,c=+$("cmc").value||0,m=+$("mj").value;const t=Calc.impozit({cmc:c,euro:eu,majorare:m});
-$("i1").textContent=f(t.min);$("i2").textContent=eu==="electric"?"Sumă fixă pentru mașinile 100% electrice.":(Math.ceil(c/200)+" fracțiuni de 200 cmc · fără majorare: "+f(t.baza)+(m?" · cu +"+m+"%: "+f(t.min):""));}
+function r(){const eu=$("eu").value,c=+$("cmc").value||0,j=$("jd").value,m=+$("mj").value;$("wmj").hidden=!!j;
+const t=j?Calc.impozit({cmc:c,euro:eu,judet:j}):Calc.impozit({cmc:c,euro:eu,majorare:m});
+$("i1").textContent=t.min===t.max?f(t.min):t.min.toLocaleString("ro-RO")+"–"+f(t.max);
+let n=eu==="electric"?"Sumă fixă pentru mașinile 100% electrice.":Math.ceil(c/200)+" fracțiuni de 200 cmc · minimul din Codul fiscal: "+f(t.baza);
+if(eu!=="electric"&&j&&t.judet)n+=" · "+t.judet[2]+": "+(t.cunoscut?(t.majorare?"+"+String(t.majorare).replace(".",",")+"%":"fără majorare")+" ("+t.judet[4]+")":"majorare neverificată pentru această capacitate");
+else if(eu!=="electric"&&m)n+=" · cu +"+m+"%: "+f(t.min);
+$("i2").textContent=n;}
 $("ci").addEventListener("input",r);$("ci").addEventListener("change",r);r()})();</script>
 </body>
 </html>

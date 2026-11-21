@@ -9,10 +9,12 @@
   }
 
   // in: {proprietar:'pf'|'pj', varsta:'le30'|..., zona:'bif'|'rest', kw, bm:'B0'}
+  function zonaJudet(j) { return j === "B" || j === "IF" ? "bif" : "rest"; }
+
   function rca(o) {
     const i = bandaKw(o.kw);
     const cheie = o.proprietar === "pj" ? "pj" : o.varsta;
-    const ref = D.rca.zone[o.zona][cheie][i];
+    const ref = D.rca.zone[o.zona || zonaJudet(o.judet)][cheie][i];
     const bm = D.rca.bm[o.bm || "B0"] || 0;
     const ajustat = Math.round(ref * (1 + bm / 100));
     return { ref, ajustat, min: Math.round(ajustat * 0.75), max: Math.round(ajustat * 1.25), banda: D.rca.etichete[i] };
@@ -30,6 +32,16 @@
     while (o.cmc > p[r]) r++;
     const fractiuni = Math.ceil(o.cmc / 200);
     const baza = Math.round(fractiuni * D.impozit.tarife[r][coloanaEuro(o.euro)]);
+    if (o.judet) {
+      const j = D.judete.find(x => x[0] === o.judet);
+      let m = j ? j[3] : null;
+      if (m && typeof m === "object" && !Array.isArray(m)) m = m.n ? m.n[o.euro] : m.b[r];
+      const brut = fractiuni * D.impozit.tarife[r][coloanaEuro(o.euro)];
+      if (Array.isArray(m)) return { baza, min: Math.round(brut * (1 + m[0] / 100)), max: Math.round(brut * (1 + m[1] / 100)), judet: j, cunoscut: false };
+      if (m === null || m === undefined) return { baza, min: baza, max: Math.round(brut * 1.5), judet: j, cunoscut: false };
+      const v = Math.round(brut * (1 + m / 100));
+      return { baza, min: v, max: v, majorare: m, judet: j, cunoscut: true };
+    }
     if (o.majorare === null || o.majorare === undefined) return { baza, min: baza, max: Math.round(baza * 1.5) };
     const v = Math.round(baza * (1 + o.majorare / 100));
     return { baza, min: v, max: v };
@@ -67,6 +79,6 @@
     };
   }
 
-  const API = { bandaKw, rca, impozit, rovinieta, itp, casco, total };
+  const API = { bandaKw, zonaJudet, rca, impozit, rovinieta, itp, casco, total };
   if (typeof module !== "undefined") module.exports = API; else root.Calc = API;
 })(this);
