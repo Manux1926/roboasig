@@ -189,9 +189,8 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important}
 .adwrap:has(ins.adsbygoogle[data-ad-status="unfilled"]){display:none}
 @media(max-width:600px){
   table{min-width:0;font-size:13.5px}
-  th,td{padding:9px 8px}
-  th:first-child,td:first-child{position:static}
-  td,th{overflow-wrap:anywhere}
+  th,td{padding:9px 7px}
+  table{font-size:13px}
   thead th:first-child{background:var(--soft)}
   nav.main{-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent);padding-right:28px}
 }
