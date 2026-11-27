@@ -183,3 +183,15 @@ footer p{margin:8px 0 0;line-height:1.55}
 .glosar{margin:0}
 .glosar dt{font-weight:700;font-size:17px;margin-top:18px;color:var(--ink);scroll-margin-top:90px}
 .glosar dd{margin:4px 0 0;color:var(--ink2);padding-bottom:14px;border-bottom:1px solid var(--line,#e6eaf2)}
+
+/* v4 fixes: mobile tables, empty ad slots, nav scroll hint */
+ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important}
+.adwrap:has(ins.adsbygoogle[data-ad-status="unfilled"]){display:none}
+@media(max-width:600px){
+  table{min-width:0;font-size:13.5px}
+  th,td{padding:9px 8px}
+  th:first-child,td:first-child{position:static}
+  td,th{overflow-wrap:anywhere}
+  thead th:first-child{background:var(--soft)}
+  nav.main{-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent);padding-right:28px}
+}
